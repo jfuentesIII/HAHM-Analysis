@@ -1,0 +1,28 @@
+# CRAB work directories
+work/
+
+# Submit registries
+submit_registry_*.log
+
+# Discovery files
+WTTR_*.dat
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Working copies (generated at runtime)
+crab_*.py
+
+# ROOT files
+*.root
+
+# Log files
+*.log
+
+# Tarballs
+*.tar.gz
+
+# CMSSW config exports
+configExport.tar.gz
