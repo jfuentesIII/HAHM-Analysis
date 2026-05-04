@@ -28,10 +28,15 @@ Repository Layout
 -----------------
 
 config/
-  common.sh              Shared configuration: EOS user, physics grid, step
-                         registry, and helper functions. Edit this file to
-                         adapt the suite for your own analysis.
+  common.sh              Shared configuration: EOS user, physics grid, epsilon
+                         table, step registry, and helper functions. Edit this
+                         file to adapt the suite for your own analysis.
   fragments/             Pythia8 hadronizer fragments (Run 2 and Run 3).
+
+LHE/
+  mgScan.sh              Set up and launch a MadGraph parameter scan.
+  lheHarvest.sh          Post-process MadGraph output: unzip, rename, collect, tar.
+  cards/                 Template cards for MadGraph (param, run, proc).
 
 submission/
   crabRave.sh            Submit CRAB jobs for any step/run.
@@ -50,8 +55,33 @@ docs/
   cmsDriver_commands.txt Reference for all cmsDriver.py commands and manual edits.
 
 
-Quick Start
------------
+LHE Generation
+--------------
+
+To run a full parameter scan with MadGraph:
+
+1. Generate the process directory (first time only):
+     Edit LHE/cards/proc_card_template.dat with your model path, then:
+       cd /path/to/MG5_aMC
+       ./bin/mg5_aMC /path/to/proc_card.dat
+
+2. Launch the scan:
+     ./LHE/mgScan.sh -Run2 /path/to/PROC_dir
+     ./LHE/mgScan.sh -Run3 /path/to/PROC_dir -nevents 50000
+
+   This stamps param_card and run_card with the grid from common.sh
+   (mzd masses, epsilon values, beam energy, time_of_flight enabled).
+
+3. Post-process the LHE output:
+     ./LHE/lheHarvest.sh /path/to/PROC_dir --tar
+
+   Unzips, renames to mzd_X_ct_Y.lhe, collects, and tarballs for transfer.
+
+4. Upload the tarball to EOS for use by crabRave.
+
+
+Quick Start (CRAB Pipeline)
+---------------------------
 
 1. Edit config/common.sh:
    - Set EOS_USER to your username.

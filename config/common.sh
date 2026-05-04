@@ -28,6 +28,30 @@ mzd_values=(0.25 1 5 10 20 30 40 50 60)
 ct_values=(0 1 10 100 500 1000)
 TOTAL_JOBS=$(( ${#mzd_values[@]} * ${#ct_values[@]} ))
 
+# === Beam Energy (per beam, GeV) ===
+declare -A BEAM_ENERGY
+BEAM_ENERGY[Run2]=6500.0
+BEAM_ENERGY[Run3]=6800.0
+
+# === Epsilon (kinetic mixing) table ===
+# Each row corresponds to a ct value, columns to mzd values.
+# Indexed as: epsilon_table[ct_idx * num_mzd + mzd_idx]
+# These values set the ZD width/lifetime for each (mzd, ct) grid point.
+epsilon_table=(
+    # ct=0     mzd: 0.25       1          5          10         20         30         40         50         60
+                    9.077e-05  4.351e-05  1.568e-05  1.078e-05  7.463e-06  5.995e-06  5.040e-06  4.262e-06  3.481e-06
+    # ct=1
+                    9.077e-06  4.351e-06  1.568e-06  1.078e-06  7.463e-07  5.995e-07  5.039e-07  4.262e-07  3.481e-07
+    # ct=10
+                    2.870e-06  1.376e-06  4.956e-07  3.409e-07  2.360e-07  1.896e-07  1.594e-07  1.344e-07  1.100e-07
+    # ct=100
+                    9.077e-07  4.351e-07  1.571e-07  1.077e-07  7.422e-08  6.031e-08  4.984e-08  4.293e-08  3.523e-08
+    # ct=500
+                    4.059e-07  1.946e-07  6.958e-08  4.849e-08  3.245e-08  2.648e-08  2.375e-08  1.938e-08  1.508e-08
+    # ct=1000
+                    2.870e-07  1.376e-07  4.946e-08  3.432e-08  2.377e-08  2.026e-08  1.60e-08   1.41e-08   1.147e-08
+)
+
 # === Valid steps per run ===
 VALID_RUN3_STEPS=(GENSIM DIGIHLT RAWRECO MINIAOD nTupRUN3)
 VALID_RUN2_STEPS=(RAWSIM HLTSIM MINIAODSIM nTupRUN2)

@@ -1,0 +1,29 @@
+#************************************************************
+#*               Command File for MadGraph5_aMC@NLO         *
+#*                                                          *
+#*  Generate HAHM process: h -> ZD ZD -> 4 leptons          *
+#*                                                          *
+#*  Edit PLACEHOLDER_MODEL_PATH to point to your local      *
+#*  HAHM_variableMW_v5_UFO model directory.                 *
+#************************************************************
+set group_subprocesses Auto
+set ignore_six_quark_processes False
+set low_mem_multicore_nlo_generation False
+set complex_mass_scheme False
+set gauge unitary
+set loop_optimized_output True
+set loop_color_flows False
+set max_npoint_for_channel 0
+set default_unset_couplings 99
+set max_t_for_channel 99
+set zerowidth_tchannel True
+import model sm
+define p = g u c d s u~ c~ d~ s~
+define j = g u c d s u~ c~ d~ s~
+define l+ = e+ mu+
+define l- = e- mu-
+define vl = ve vm vt
+define vl~ = ve~ vm~ vt~
+import model PLACEHOLDER_MODEL_PATH
+generate p p > h > zp zp, (zp > e+ e-), (zp > mu+ mu-)
+output
