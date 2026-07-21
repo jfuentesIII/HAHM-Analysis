@@ -79,7 +79,6 @@ cmsDriver.py \
 --datatier AODSIM \
 --conditions 140X_mcRun3_2024_realistic_v26 \
 --step RAW2DIGI,L1Reco,RECO,RECOSIM \
---procModifiers siPixelQualityRawToDigi \
 --geometry DB:Extended \
 --era Run3_2024 \
 --python_filename tmp_RAW2DIGI-L1Reco-RECO-RECOSIM.py \
