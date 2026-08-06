@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# seafoodBoil.sh — Kill all CRAB tasks for a given analysis step.
+# seafoodBoil.sh - Kill all CRAB tasks for a given analysis step.
 #
 # Usage:
 #   ./seafoodBoil.sh -Run3 -GENSIM

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# rootCanal.sh — Download ROOT files from EOS, hadd, and optionally tarball.
+# rootCanal.sh - Download ROOT files from EOS, hadd, and optionally tarball.
 #
 # With -precise, downloads only the first ROOT file per job (no hadd).
 #
@@ -30,11 +30,11 @@ if [[ $# -lt 2 ]]; then
     echo "  -precise     Download only the first ROOT file per job (no hadd)"
     echo ""
     echo "  Filters:"
-    echo "    all              — all jobs"
-    echo "    <number>         — single job by number (1-${TOTAL_JOBS})"
-    echo "    mzd <value>      — all ct values for a given mzd"
-    echo "    ct <value>       — all mzd values for a given ct"
-    echo "    both <mzd> <ct>  — single parameter point"
+    echo "    all              - all jobs"
+    echo "    <number>         - single job by number (1-${TOTAL_JOBS})"
+    echo "    mzd <value>      - all ct values for a given mzd"
+    echo "    ct <value>       - all mzd values for a given ct"
+    echo "    both <mzd> <ct>  - single parameter point"
     exit 1
 fi
 
@@ -59,11 +59,11 @@ if [[ $# -eq 0 ]]; then
     if $PRECISE; then echo "  Mode: precise (first file only)"; fi
     echo ""
     echo "Filter options:"
-    echo "  all              — all ${TOTAL_JOBS} jobs"
-    echo "  <number>         — single job by number (1-${TOTAL_JOBS})"
-    echo "  mzd <value>      — all ct values for a given mzd"
-    echo "  ct <value>       — all mzd values for a given ct"
-    echo "  both <mzd> <ct>  — single parameter point"
+    echo "  all              - all ${TOTAL_JOBS} jobs"
+    echo "  <number>         - single job by number (1-${TOTAL_JOBS})"
+    echo "  mzd <value>      - all ct values for a given mzd"
+    echo "  ct <value>       - all mzd values for a given ct"
+    echo "  both <mzd> <ct>  - single parameter point"
     echo ""
     read -rp "Filter: " -a FILTER_ARGS
 else

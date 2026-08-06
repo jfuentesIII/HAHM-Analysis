@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# crabResubmit.sh — Resubmit failed CRAB jobs by job number.
+# crabResubmit.sh - Resubmit failed CRAB jobs by job number.
 #
 # Usage:
 #   ./crabResubmit.sh -Run3 -GENSIM 3 7 12

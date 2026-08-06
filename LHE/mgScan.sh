@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# mgScan.sh — Launch a MadGraph parameter scan for the HAHM model.
+# mgScan.sh - Launch a MadGraph parameter scan for the HAHM model.
 #
 # Generates param_card.dat and run_card.dat from templates, stamps them
 # with the physics grid and epsilon table from common.sh, copies them

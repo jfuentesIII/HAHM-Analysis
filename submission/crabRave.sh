@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# crabRave.sh — Dispatcher for CRAB job submission across all steps and runs.
+# crabRave.sh - Dispatcher for CRAB job submission across all steps and runs.
 #
 # Usage:
 #   ./crabRave.sh -Run3 -GENSIM
@@ -82,7 +82,7 @@ fi
 
 REGISTRY="${SUBMISSION_DIR}/submit_registry_${STEP}.log"
 if [[ ! -f "$REGISTRY" ]]; then
-    echo "# crabRave ${RUN} ${STEP} registry — $(date)" > "$REGISTRY"
+    echo "# crabRave ${RUN} ${STEP} registry - $(date)" > "$REGISTRY"
     echo "# jobTag | inputRef | submitTime | status" >> "$REGISTRY"
 fi
 

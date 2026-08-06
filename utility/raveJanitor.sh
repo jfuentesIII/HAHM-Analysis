@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# raveJanitor.sh — Clean up CRAB work directories and registry for a step.
+# raveJanitor.sh - Clean up CRAB work directories and registry for a step.
 #
 # Usage:
 #   ./raveJanitor.sh -Run3 -GENSIM

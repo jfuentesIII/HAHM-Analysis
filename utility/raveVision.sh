@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# raveVision.sh — Monitor CRAB job status across all analysis steps and runs.
+# raveVision.sh - Monitor CRAB job status across all analysis steps and runs.
 #
 # Usage:
 #   ./raveVision.sh -Run3 -GENSIM all
@@ -18,8 +18,8 @@ if [[ $# -lt 2 ]]; then
     echo ""
     usage_steps
     echo ""
-    echo "  all           — full scan of all jobs"
-    echo "  3 7 12        — check specific job numbers"
+    echo "  all           - full scan of all jobs"
+    echo "  3 7 12        - check specific job numbers"
     exit 1
 fi
 
@@ -122,8 +122,8 @@ if [[ $# -eq 0 ]]; then
     echo "raveVision: running for ${RUN} ${STEP}"
     echo ""
     echo "Options:"
-    echo "  all                — full scan of all ${TOTAL_JOBS} jobs"
-    echo "  1-${TOTAL_JOBS}              — check specific job number(s), space-separated"
+    echo "  all                - full scan of all ${TOTAL_JOBS} jobs"
+    echo "  1-${TOTAL_JOBS}              - check specific job number(s), space-separated"
     echo ""
     read -rp "Enter choice: " -a ARGS
 else

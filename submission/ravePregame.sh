@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# ravePregame.sh — EOS discovery for WTTR_MODE steps.
+# ravePregame.sh - EOS discovery for WTTR_MODE steps.
 #
 # Run this OUTSIDE the VM on your normal cmslpc shell where xrdfs works.
 # It queries EOS for input ROOT files and writes a WTTR discovery file
@@ -52,7 +52,7 @@ echo ""
 # =============================================================================
 # Discovery loop
 # =============================================================================
-echo "# ravePregame ${RUN} ${STEP} discovery — $(date)" > "$WTTR_PATH"
+echo "# ravePregame ${RUN} ${STEP} discovery - $(date)" > "$WTTR_PATH"
 echo "# jobTag|inputFileList" >> "$WTTR_PATH"
 
 discovered=0

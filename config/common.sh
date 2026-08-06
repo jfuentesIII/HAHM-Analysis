@@ -1,6 +1,6 @@
 #!/bin/bash
 # =============================================================================
-# common.sh — Shared configuration for HAHM-Analysis
+# common.sh - Shared configuration for HAHM-Analysis
 #
 # Source this file from any script:
 #   source "$(dirname "${BASH_SOURCE[0]}")/../config/common.sh"
@@ -169,7 +169,7 @@ load_step_config() {
     EOS_STEP_DIR="${EOS_BASE}/${EOS_SUBDIR}"
 }
 
-# Map a job number (1–TOTAL_JOBS) to its grid point and tag.
+# Map a job number (1-TOTAL_JOBS) to its grid point and tag.
 # Sets: mzd, ct, mzd_safe, ct_safe, job_tag
 get_job_info() {
     local n=$1

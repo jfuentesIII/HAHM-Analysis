@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # =============================================================================
-# lheHarvest.sh — Post-process MadGraph output: unzip, rename, collect, tar.
+# lheHarvest.sh - Post-process MadGraph output: unzip, rename, collect, tar.
 #
 # Takes a MadGraph process directory with completed runs and produces a
 # tarball of LHE files named by their (mzd, ct) grid point.
